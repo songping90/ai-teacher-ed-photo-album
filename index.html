@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>計畫活動成果相簿</title>
+<meta name="description" content="數位科技轉化大學師培課程培訓計畫：2025 年 11 月至 2026 年 10 月的工作坊、師培課程、合作推廣、新加坡學術參訪與社群運作影像紀錄。">
+<link rel="icon" href="assets/logo-tfai.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #FFFFFF;
+  --ground: #EEF1F6;
+  --ink: #1F3864;
+  --title: #17365D;
+  --mute: #5B7089;
+  --line: #D5DDEA;
+  --zebra: #F3F6FB;
+  --on-fill: #FFFFFF;
+  --brand: #2F6DB5;
+  --shadow: 0 10px 30px rgba(23, 54, 93, .09);
+  --shadow-hi: 0 16px 40px rgba(23, 54, 93, .16);
+  --c: var(--brand);
+  --c-acc: color-mix(in srgb, var(--c) 78%, #000);
+  --c-soft: color-mix(in srgb, var(--c) 12%, var(--paper));
+  --radius: 18px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #172131; --ground: #0C131D; --ink: #D9E3F1; --title: #F1F5FB;
+    --mute: #A5B5CA; --line: #2D3C53; --zebra: #1D293B; --on-fill: #0C131D;
+    --brand: #8DB6EA;
+    --shadow: 0 10px 30px rgba(0,0,0,.4); --shadow-hi: 0 16px 40px rgba(0,0,0,.55);
+    --c-acc: color-mix(in srgb, var(--c) 45%, #fff);
+    --c-soft: color-mix(in srgb, var(--c) 22%, var(--paper));
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #172131; --ground: #0C131D; --ink: #D9E3F1; --title: #F1F5FB;
+  --mute: #A5B5CA; --line: #2D3C53; --zebra: #1D293B; --on-fill: #0C131D;
+  --brand: #8DB6EA;
+  --shadow: 0 10px 30px rgba(0,0,0,.4); --shadow-hi: 0 16px 40px rgba(0,0,0,.55);
+  --c-acc: color-mix(in srgb, var(--c) 45%, #fff);
+  --c-soft: color-mix(in srgb, var(--c) 22%, var(--paper));
+  color-scheme: dark;
+}
+[style*="--c:"] {
+  --c-acc: color-mix(in srgb, var(--c) 78%, #000);
+  --c-soft: color-mix(in srgb, var(--c) 12%, var(--paper));
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [style*="--c:"] {
+    --c-acc: color-mix(in srgb, var(--c) 45%, #fff);
+    --c-soft: color-mix(in srgb, var(--c) 22%, var(--paper));
+  }
+}
+:root[data-theme="dark"] [style*="--c:"] {
+  --c-acc: color-mix(in srgb, var(--c) 45%, #fff);
+  --c-soft: color-mix(in srgb, var(--c) 22%, var(--paper));
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body {
+  margin: 0; background: var(--ground); color: var(--ink);
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; border-radius: 6px; }
+
+/* ===== 頂部列 ===== */
+.topbar {
+  position: sticky; top: 0; z-index: 30;
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  border-bottom: 1px solid var(--line);
+}
+.topbar .wrap { display: flex; align-items: center; gap: 18px; height: 64px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; min-width: 0; }
+.brand img { width: 40px; height: 40px; }
+.brand b { display: block; font-size: 16px; color: var(--title); line-height: 1.2; }
+.brand small { display: block; font-size: 12px; color: var(--mute); line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topnav { margin-left: auto; display: flex; gap: 4px; }
+.topnav a { text-decoration: none; font-size: 15px; color: var(--mute); padding: 6px 12px; border-radius: 999px; }
+.topnav a:hover { background: var(--zebra); color: var(--title); }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--paper); color: var(--title);
+  font-size: 15px; font-weight: 700; padding: 9px 16px; border-radius: 999px; text-decoration: none;
+  transition: transform .15s, box-shadow .15s, background .15s;
+}
+.btn:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
+.btn.primary { background: var(--brand); border-color: var(--brand); color: var(--on-fill); }
+.btn.ghost { background: transparent; }
+.icon-btn { width: 40px; height: 40px; padding: 0; justify-content: center; font-size: 18px; }
+
+/* ===== 主視覺 ===== */
+.hero { position: relative; overflow: hidden; background: var(--paper); border-bottom: 1px solid var(--line); }
+.hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(600px 380px at 82% 40%, color-mix(in srgb, var(--brand) 14%, transparent), transparent 70%),
+    radial-gradient(circle, color-mix(in srgb, var(--brand) 16%, transparent) 1px, transparent 1.6px) 0 0 / 22px 22px;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 55%);
+}
+.hero .wrap { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 32px; align-items: center; padding-top: 56px; padding-bottom: 56px; }
+.kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--brand); background: color-mix(in srgb, var(--brand) 10%, var(--paper)); padding: 6px 14px; border-radius: 999px; }
+.hero h1 { font-size: clamp(34px, 4.6vw, 54px); line-height: 1.2; color: var(--title); margin: 18px 0 12px; font-weight: 900; letter-spacing: .02em; }
+.hero h1 em { font-style: normal; color: var(--brand); }
+.hero .lead { font-size: 18px; color: var(--mute); margin: 0 0 26px; max-width: 34em; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 0 0 28px; max-width: 560px; }
+.stat { background: var(--zebra); border-radius: 14px; padding: 12px 14px; }
+.stat b { display: block; font-size: 28px; line-height: 1.1; color: var(--title); font-weight: 900; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 13px; color: var(--mute); }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-cta .btn { font-size: 16px; padding: 12px 22px; }
+.hero-art { display: grid; grid-template-columns: 1.35fr 1fr; grid-template-rows: auto auto; gap: 12px; align-items: end; }
+.collage { grid-column: 1 / -1; display: grid; grid-template-columns: 1.35fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; aspect-ratio: 16 / 9.4; }
+.collage figure { margin: 0; position: relative; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-hi); }
+.collage figure:first-child { grid-row: span 2; }
+.collage img { width: 100%; height: 100%; object-fit: cover; }
+.collage span { position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 12px 8px; font-size: 13px; font-weight: 700; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.6)); }
+.hero-mascot { grid-column: 1 / -1; display: flex; align-items: center; gap: 4px; justify-content: flex-end; }
+.hero-mascot img { width: min(300px, 62%); filter: drop-shadow(0 12px 22px rgba(23,54,93,.14)); animation: float 6s ease-in-out infinite; }
+.bubble { position: relative; background: var(--paper); border: 1px solid var(--line); box-shadow: var(--shadow); border-radius: 16px; padding: 10px 16px; font-size: 15px; font-weight: 700; color: var(--title); line-height: 1.5; max-width: 15em; }
+.bubble::after { content: ""; position: absolute; right: -8px; top: 50%; margin-top: -8px; width: 14px; height: 14px; background: var(--paper); border-right: 1px solid var(--line); border-top: 1px solid var(--line); transform: rotate(45deg); }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+/* ===== 區段 ===== */
+section.block { padding: 64px 0 24px; }
+.sec-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.sec-head h2 { margin: 0; font-size: 30px; color: var(--title); font-weight: 900; line-height: 1.3; }
+.sec-head p { margin: 4px 0 0; color: var(--mute); }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .14em; color: var(--brand); }
+
+/* 分類卡 */
+.cats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.catcard {
+  text-align: left; cursor: pointer; border: 1px solid var(--line); background: var(--paper);
+  border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); position: relative; overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+.catcard::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--c); }
+.catcard:hover { transform: translateY(-3px); box-shadow: var(--shadow-hi); }
+.catcard .ic { font-size: 26px; width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px; background: var(--c-soft); }
+.catcard h3 { margin: 12px 0 4px; font-size: 18px; color: var(--title); }
+.catcard p { margin: 0; font-size: 14px; color: var(--mute); line-height: 1.6; }
+.catcard .num { margin-top: 10px; font-size: 14px; color: var(--c-acc); font-weight: 700; }
+
+/* 篩選列 */
+.filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip {
+  cursor: pointer; border: 1px solid var(--line); background: var(--paper); color: var(--mute);
+  padding: 7px 14px; border-radius: 999px; font-size: 14px; font-weight: 700;
+}
+.chip[aria-pressed="true"] { background: var(--c, var(--brand)); border-color: var(--c, var(--brand)); color: #fff; }
+
+/* ===== 時間軸 ===== */
+.timeline { position: relative; padding-left: 132px; }
+.timeline::before { content: ""; position: absolute; left: 104px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+.month { position: relative; margin: 34px 0 14px; }
+.month:first-child { margin-top: 0; }
+.month span {
+  position: absolute; left: -132px; top: -4px; width: 92px; text-align: right;
+  font-weight: 900; color: var(--title); font-size: 15px; line-height: 1.3;
+}
+.month span small { display: block; font-weight: 500; color: var(--mute); font-size: 12px; }
+.event {
+  position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 24px; margin-bottom: 22px;
+}
+.event::before {
+  content: ""; position: absolute; left: -35px; top: 30px; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--c); box-shadow: 0 0 0 5px var(--ground), 0 0 0 7px color-mix(in srgb, var(--c) 35%, transparent);
+}
+.ev-head { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; margin-bottom: 16px; }
+.datebox {
+  min-width: 86px; text-align: center; border-radius: 14px; padding: 10px 10px 8px;
+  background: var(--c-soft); color: var(--c-acc);
+}
+.datebox b { display: block; font-size: 26px; line-height: 1.1; font-weight: 900; font-variant-numeric: tabular-nums; }
+.datebox span { display: block; font-size: 12px; font-weight: 700; margin-top: 4px; }
+.tag { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--c-acc); background: var(--c-soft); padding: 3px 10px; border-radius: 999px; }
+.event h3 { margin: 6px 0 6px; font-size: 24px; color: var(--title); line-height: 1.35; }
+.event h3 small { display: block; font-size: 14px; color: var(--mute); font-weight: 500; letter-spacing: .01em; }
+.event .when { font-size: 14px; color: var(--mute); margin: 0 0 6px; }
+.event .desc { margin: 0; max-width: 46em; }
+.ev-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 14px; font-size: 14px; color: var(--mute); }
+.ev-meta .count { font-weight: 700; color: var(--title); }
+.ev-meta .btn { font-size: 14px; padding: 6px 14px; }
+.part-label { margin: 18px 0 10px; font-weight: 900; color: var(--title); font-size: 16px; display: flex; align-items: center; gap: 8px; }
+.part-label::before { content: ""; width: 6px; height: 18px; border-radius: 3px; background: var(--c); }
+
+/* 照片拼貼 */
+.mosaic { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 132px; gap: 8px; }
+.mosaic button {
+  position: relative; padding: 0; border: 0; border-radius: 10px; overflow: hidden; cursor: zoom-in;
+  background: var(--zebra);
+}
+.mosaic button:first-child { grid-column: span 2; grid-row: span 2; }
+.mosaic img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; transition: transform .35s; }
+.mosaic button:hover img { transform: scale(1.04); }
+.mosaic .cap {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 18px 10px 6px; font-size: 12px; color: #fff; text-align: left; line-height: 1.4;
+  background: linear-gradient(transparent, rgba(0,0,0,.6));
+}
+
+/* 新加坡專區 */
+.sg-en { font-style: italic; }
+.daytabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 4px 0 16px; }
+.daytab {
+  cursor: pointer; text-align: left; border: 1px solid var(--line); background: var(--paper); border-radius: 14px;
+  padding: 8px 14px; line-height: 1.35; min-width: 118px;
+}
+.daytab b { display: block; font-size: 15px; color: var(--title); }
+.daytab span { font-size: 12px; color: var(--mute); }
+.daytab[aria-selected="true"] { background: var(--c); border-color: var(--c); }
+.daytab[aria-selected="true"] b, .daytab[aria-selected="true"] span { color: #fff; }
+.units { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; padding: 0; list-style: none; }
+.units li { font-size: 14px; background: var(--zebra); border-radius: 10px; padding: 6px 12px; }
+.units li::before { content: "📍 "; }
+
+/* 社群 */
+.groups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.group { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; display: flex; flex-direction: column; }
+.group h3 { margin: 0 0 8px; font-size: 20px; color: var(--title); display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.group h3 small { font-size: 13px; color: var(--mute); font-weight: 500; }
+.group ul { margin: 0 0 14px; padding-left: 1.2em; font-size: 15px; }
+.group li { margin: 2px 0; }
+.group .mosaic { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 104px; }
+.group .mosaic button:not(:first-child) .cap { display: none; }
+.group.wide { grid-column: 1 / -1; display: grid; grid-template-columns: 300px 1fr; column-gap: 28px; align-items: start; }
+.group.wide h3, .group.wide ul, .group.wide .ev-meta { grid-column: 1; }
+.group.wide .mosaic { grid-column: 2; grid-row: 1 / span 3; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 120px; }
+.mosaic.cols3 { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 150px; }
+.mosaic.n4 { grid-template-columns: 2fr 1fr; grid-auto-rows: 110px; }
+.mosaic.n4 button:first-child { grid-column: 1; grid-row: span 3; }
+.group .ev-meta { margin-top: 12px; }
+
+/* 頁尾 */
+footer { margin-top: 56px; background: var(--paper); border-top: 1px solid var(--line); padding: 32px 0 40px; font-size: 14px; color: var(--mute); }
+footer .wrap { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; }
+footer img { width: 64px; height: 64px; }
+footer b { color: var(--title); }
+footer p { margin: 4px 0; }
+
+/* ===== 燈箱 ===== */
+.lb { position: fixed; inset: 0; z-index: 60; background: rgba(8, 12, 20, .94); display: none; color: #fff; }
+.lb.open { display: grid; grid-template-rows: auto 1fr auto; }
+.lb-top { display: flex; align-items: center; gap: 12px; padding: 12px 16px; }
+.lb-top .t { font-weight: 700; font-size: 16px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lb-top .n { margin-left: auto; font-variant-numeric: tabular-nums; color: #b9c6da; font-size: 14px; white-space: nowrap; }
+.lb-btn { border: 0; background: rgba(255,255,255,.12); color: #fff; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 20px; flex: none; }
+.lb-btn:hover { background: rgba(255,255,255,.24); }
+.lb-stage { position: relative; display: grid; place-items: center; min-height: 0; overflow: hidden; padding: 0 64px; }
+.lb-stage img { width: auto; height: auto; max-width: 100%; max-height: calc(100vh - 150px); max-height: calc(100dvh - 150px); object-fit: contain; border-radius: 6px; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+.lb-prev, .lb-next { position: absolute; top: 50%; transform: translateY(-50%); }
+.lb-prev { left: 12px; } .lb-next { right: 12px; }
+.lb-cap { padding: 12px 20px 18px; text-align: center; font-size: 15px; color: #dfe7f3; }
+.lb-cap b { color: #fff; }
+.lb-msg { color: #b9c6da; font-size: 15px; text-align: center; max-width: 30em; }
+
+/* 全部照片（雲端） */
+.allp { position: fixed; inset: 0; z-index: 55; background: var(--ground); display: none; overflow: auto; }
+.allp.open { display: block; }
+.allp-head { position: sticky; top: 0; z-index: 2; background: var(--paper); border-bottom: 1px solid var(--line); }
+.allp-head .wrap { display: flex; align-items: center; gap: 12px; height: 64px; }
+.allp-head h2 { margin: 0; font-size: 18px; color: var(--title); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.allp-note { color: var(--mute); font-size: 14px; margin: 16px 0; }
+.allp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; padding-bottom: 40px; }
+.allp-grid button { padding: 0; border: 0; border-radius: 8px; overflow: hidden; aspect-ratio: 1; background: var(--zebra); cursor: zoom-in; }
+.allp-grid img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ===== 簡報模式 ===== */
+.show { position: fixed; inset: 0; z-index: 80; background: #0b1220; display: none; overflow: hidden; }
+.show.open { display: block; }
+.stage {
+  position: absolute; left: 50%; top: 50%; width: 1600px; height: 900px; transform-origin: center;
+  background: #fff; color: #1F3864; overflow: hidden; border-radius: 4px;
+}
+.slide { position: absolute; inset: 0; display: none; padding: 64px 80px; }
+.slide.on { display: block; animation: sin .45s ease; }
+@keyframes sin { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.slide .s-foot { position: absolute; left: 80px; right: 80px; bottom: 26px; display: flex; justify-content: space-between; font-size: 18px; color: #8293aa; }
+.slide .s-foot img { width: 30px; height: 30px; display: inline-block; vertical-align: middle; margin-right: 8px; }
+.s-cover { display: grid !important; grid-template-columns: 1fr 700px; gap: 40px; align-items: center; background: radial-gradient(800px 500px at 80% 45%, #e3edfa, transparent 70%), #fff; }
+.s-cover:not(.on) { display: none !important; }
+.s-cover .logo { display: flex; align-items: center; gap: 16px; font-size: 24px; font-weight: 700; color: #2F6DB5; }
+.s-cover .logo img { width: 84px; height: 84px; }
+.s-cover h1 { font-size: 84px; line-height: 1.15; margin: 30px 0 18px; color: #17365D; font-weight: 900; }
+.s-cover p { font-size: 28px; color: #5B7089; margin: 0 0 36px; }
+.s-stats { display: flex; gap: 16px; }
+.s-stats div { background: #EEF3FA; border-radius: 18px; padding: 16px 24px; }
+.s-stats b { display: block; font-size: 44px; line-height: 1.1; color: #17365D; font-weight: 900; }
+.s-stats span { font-size: 20px; color: #5B7089; }
+.s-title { display: flex; align-items: center; gap: 16px; font-size: 22px; font-weight: 700; color: var(--c); margin-bottom: 10px; }
+.s-title .pill { background: var(--c); color: #fff; border-radius: 999px; padding: 4px 16px; }
+.slide h2 { font-size: 56px; line-height: 1.2; margin: 0 0 8px; color: #17365D; font-weight: 900; }
+.slide .s-when { font-size: 26px; color: #5B7089; margin-bottom: 18px; }
+.slide .s-desc { font-size: 26px; line-height: 1.7; color: #33475f; margin: 0; }
+/* 照片框：比例相符就填滿（偏上對焦，不切頭），不相符就完整顯示＋同張模糊補邊 */
+.ph { position: relative; overflow: hidden; border-radius: 16px; background: #eef1f6; }
+.ph img { display: block; }
+.ph img.cv { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
+.ph img.bf { position: absolute; left: -24px; top: -24px; width: calc(100% + 48px); height: calc(100% + 48px); object-fit: cover; filter: blur(16px) brightness(.92); }
+.ph img.ct { position: relative; width: 100%; height: 100%; object-fit: contain; }
+.s-ev { padding: 52px 72px 0; }
+.s-ev .s-head { margin-bottom: 22px; }
+.s-ev h2 { margin: 10px 0 6px; }
+.s-ev .s-meta { font-size: 24px; color: #5B7089; }
+.s-ev .s-meta b { color: #33475f; }
+.s-ev .s-body { display: grid; grid-template-columns: 739px 360px 1fr; grid-template-rows: 270px 270px; gap: 14px; }
+.s-ev .s-body .m { grid-row: span 2; }
+.s-ev .txt { grid-column: 3; grid-row: 1 / span 2; padding: 4px 0 0 22px; border-left: 5px solid var(--c); margin-left: 12px; display: flex; flex-direction: column; gap: 16px; }
+.s-ev .txt .s-desc { font-size: 22px; line-height: 1.7; }
+.s-ev .units { margin: 0; flex-direction: column; align-items: flex-start; gap: 8px; }
+.s-ev .units li { font-size: 21px; background: #EEF3FA; padding: 6px 14px; line-height: 1.45; }
+.s-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 26px; height: 560px; }
+.s-grid > div { border-radius: 16px; overflow: hidden; position: relative; background: #eef1f6; }
+.s-grid img { width: 100%; height: 100%; object-fit: cover; }
+.s-grid .lab { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 14px; color: #fff; font-size: 24px; font-weight: 700; background: linear-gradient(transparent, rgba(0,0,0,.65)); }
+.s-over { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; margin-top: 36px; }
+.s-over div { border-radius: 20px; padding: 26px 22px; background: #F3F6FB; border-top: 8px solid var(--c); }
+.s-over i { font-style: normal; font-size: 40px; }
+.s-over b { display: block; font-size: 28px; color: #17365D; margin: 12px 0 8px; }
+.s-over span { font-size: 21px; color: #5B7089; line-height: 1.6; display: block; }
+.s-tl { margin-top: 48px; display: grid; grid-template-columns: repeat(6, 1fr); border-top: 4px solid #D5DDEA; }
+.s-tl div { position: relative; padding: 22px 10px 0; text-align: center; }
+.s-tl div::before { content: ""; position: absolute; top: -13px; left: 50%; margin-left: -11px; width: 22px; height: 22px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 5px #fff; }
+.s-tl b { display: block; font-size: 22px; color: var(--c); }
+.s-tl span { display: block; font-size: 20px; color: #33475f; line-height: 1.45; margin-top: 4px; }
+.s-groups { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 26px; }
+.s-groups > div { background: #F3F6FB; border-radius: 18px; overflow: hidden; }
+.s-groups .gimg { aspect-ratio: 4 / 3; border-radius: 0; }
+.s-groups b { display: block; font-size: 24px; color: #17365D; padding: 14px 18px 4px; }
+.s-groups ul { margin: 0; padding: 0 16px 16px 34px; font-size: 17px; line-height: 1.55; color: #33475f; }
+.s-groups li { margin-bottom: 4px; }
+.s-days { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 30px; }
+.s-days .ph { aspect-ratio: 4 / 3; border-radius: 14px; }
+.s-days b { display: block; font-size: 24px; color: #17365D; margin: 12px 0 4px; }
+.s-days span { display: block; font-size: 18px; line-height: 1.5; color: #5B7089; }
+.s-end { display: grid !important; grid-template-columns: 380px auto; justify-content: center; gap: 70px; align-items: center; background: radial-gradient(700px 500px at 25% 55%, #e3edfa, transparent 70%), #fff; }
+.s-end:not(.on) { display: none !important; }
+.s-end h2 { font-size: 80px; }
+.show-bar {
+  position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 3;
+  display: flex; align-items: center; gap: 10px; background: rgba(15, 23, 38, .82); color: #fff;
+  border-radius: 999px; padding: 6px 10px; transition: opacity .3s;
+}
+.show-bar .n { font-variant-numeric: tabular-nums; min-width: 72px; text-align: center; font-size: 14px; }
+.show.idle .show-bar { opacity: 0; }
+.show.idle { cursor: none; }
+.show-prog { position: absolute; left: 0; top: 0; height: 4px; background: #8DB6EA; z-index: 3; transition: width .3s; }
+.show-hint { position: absolute; top: 14px; right: 18px; z-index: 3; color: #8293aa; font-size: 13px; transition: opacity .3s; }
+.show.idle .show-hint { opacity: 0; }
+
+/* ===== 響應式 ===== */
+@media (max-width: 1080px) {
+  .cats { grid-template-columns: repeat(3, 1fr); }
+  .topnav { display: none; }
+}
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; padding-top: 36px; padding-bottom: 36px; }
+  .hero-art { max-width: 520px; width: 100%; margin: 0 auto; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .timeline { padding-left: 22px; }
+  .timeline::before { left: 4px; }
+  .month span { position: static; display: inline-block; width: auto; text-align: left; background: var(--title); color: var(--paper); padding: 4px 12px; border-radius: 999px; font-size: 14px; }
+  .month span small { display: inline; color: inherit; opacity: .8; margin-left: 6px; }
+  .event::before { left: -25px; }
+  .groups { grid-template-columns: 1fr; }
+  .group.wide { display: flex; }
+  .group.wide .mosaic { grid-template-columns: repeat(3, 1fr); }
+  .mosaic, .mosaic.cols3 { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 110px; }
+  .mosaic.n4 { grid-template-columns: 2fr 1fr; grid-auto-rows: 90px; }
+}
+@media (max-width: 560px) {
+  .wrap { padding: 0 16px; }
+  body { font-size: 16px; }
+  .brand small { display: none; }
+  .cats { grid-template-columns: 1fr 1fr; }
+  .event { padding: 18px 16px; }
+  .ev-head { grid-template-columns: 1fr; gap: 10px; }
+  .datebox { display: inline-flex; align-items: baseline; gap: 8px; min-width: 0; justify-self: start; padding: 6px 12px; }
+  .datebox b { font-size: 20px; } .datebox span { margin-top: 0; }
+  .event h3 { font-size: 21px; }
+  .mosaic, .mosaic.cols3 { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 104px; }
+  .mosaic.n4 { grid-template-columns: 2fr 1fr; grid-auto-rows: 72px; }
+  .sec-head h2 { font-size: 25px; }
+  .lb-stage { padding: 0 8px 60px; }
+  .lb-stage img { max-height: calc(100vh - 210px); max-height: calc(100dvh - 210px); }
+  .lb-prev, .lb-next { top: auto; bottom: 6px; transform: none; }
+  .lb-prev { left: calc(50% - 56px); } .lb-next { right: calc(50% - 56px); }
+  .stat b { font-size: 24px; }
+  .hide-sm { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+@media print {
+  .topbar, .hero-cta, .filters, .ev-meta .btn, .lb, .show, .allp { display: none !important; }
+  .event, .group { break-inside: avoid; box-shadow: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="assets/logo-tfai.png" alt="計畫標誌" width="40" height="40">
+      <span><b>計畫活動成果相簿</b><small>數位科技轉化大學師培課程培訓計畫</small></span>
+    </a>
+    <nav class="topnav" aria-label="頁內導覽">
+      <a href="#overview">活動類別</a>
+      <a href="#timeline">時間軸</a>
+      <a href="#ev-sg">新加坡參訪</a>
+      <a href="#community">社群運作</a>
+    </nav>
+    <button class="btn icon-btn" id="themeBtn" type="button" aria-label="切換深淺色" title="切換深淺色">🌓</button>
+    <button class="btn primary" type="button" data-show><span aria-hidden="true">▶</span><span class="hide-sm">簡報模式</span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="kicker">📷 2025 年 11 月 ～ 2026 年 10 月　活動影像紀錄</span>
+        <h1>一年的實踐足跡，<br><em>計畫活動成果相簿</em></h1>
+        <p class="lead">以 AI 為核心改變教與學的課堂風景。計畫集結全國師培大學教授組成數位實踐社群，透過工作坊、三角共學社群、沙盒課程與國際參訪，深化 AI 在師資培育的應用。以下依時間與類別回顧這一年的活動。</p>
+        <div class="stats" id="stats"></div>
+        <div class="hero-cta">
+          <button class="btn primary" type="button" data-show>▶ 簡報模式播放</button>
+          <a class="btn" href="#timeline">瀏覽時間軸 ↓</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="collage">
+          <figure><img src="assets/photos/share0627-184.webp" alt="成果分享會全體合影"><span>2026.6.27　成果分享會</span></figure>
+          <figure><img src="assets/photos/sandbox-326-s.webp" alt="暑期沙盒課程結業合影"><span>2026.7　暑期沙盒課程</span></figure>
+          <figure><img src="assets/photos/sg1-436-s.webp" alt="新加坡學術參訪團體合影"><span>2026.10　新加坡學術參訪</span></figure>
+        </div>
+        <div class="hero-mascot" aria-hidden="true"><div class="bubble">一起回顧這一年的<br>工作坊、課程與交流！</div><img src="assets/mascot-community.webp" alt="" width="1536" height="1024"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="overview">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow">OVERVIEW</div><h2>五大類活動</h2><p>點選類別，下方時間軸只顯示該類活動。</p></div>
+      </div>
+      <div class="cats" id="cats"></div>
+    </div>
+  </section>
+
+  <section class="block" id="timeline-sec">
+    <div class="wrap">
+      <div class="sec-head" id="timeline">
+        <div><div class="eyebrow">TIMELINE</div><h2>活動時間軸</h2><p>點照片可放大瀏覽；「全部照片」會連線讀取雲端相簿的完整內容。</p></div>
+        <div class="filters" id="filters" role="group" aria-label="依類別篩選"></div>
+      </div>
+      <div class="timeline" id="tl"></div>
+    </div>
+  </section>
+
+  <section class="block" id="community">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow">COMMUNITY</div><h2>實踐社群與計畫運作</h2><p id="commDesc"></p></div>
+      </div>
+      <div class="groups" id="groups"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo-tfai.png" alt="" width="64" height="64">
+    <div>
+      <p><b>© 2026 陳佩英教授計畫團隊・數位科技轉化大學師培課程培訓計畫</b></p>
+      <p>照片僅供計畫成果介紹使用；轉載或另作他用，請先徵得計畫團隊同意。</p>
+    </div>
+  </div>
+</footer>
+
+<!-- 燈箱 -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="照片瀏覽">
+  <div class="lb-top"><span class="t" id="lbTitle"></span><span class="n" id="lbNum"></span><button class="lb-btn" type="button" id="lbClose" aria-label="關閉">✕</button></div>
+  <div class="lb-stage">
+    <img id="lbImg" alt="">
+    <p class="lb-msg" id="lbMsg" hidden></p>
+    <button class="lb-btn lb-prev" type="button" id="lbPrev" aria-label="上一張">‹</button>
+    <button class="lb-btn lb-next" type="button" id="lbNext" aria-label="下一張">›</button>
+  </div>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<!-- 全部照片（雲端） -->
+<div class="allp" id="allp" role="dialog" aria-modal="true" aria-labelledby="allpTitle">
+  <div class="allp-head"><div class="wrap">
+    <h2 id="allpTitle"></h2>
+    <button class="btn icon-btn" type="button" id="allpClose" aria-label="關閉">✕</button>
+  </div></div>
+  <div class="wrap">
+    <p class="allp-note">此處需連上網路讀取。演講現場若網路不穩，請使用頁面上的照片或簡報模式。</p>
+    <div class="allp-grid" id="allpGrid"></div>
+  </div>
+</div>
+
+<!-- 簡報模式 -->
+<div class="show" id="show" role="dialog" aria-modal="true" aria-label="簡報模式">
+  <div class="show-prog" id="showProg"></div>
+  <div class="show-hint">← → 換頁　Esc 離開　F 全螢幕</div>
+  <div class="stage" id="stage"></div>
+  <div class="show-bar">
+    <button class="lb-btn" type="button" id="sPrev" aria-label="上一頁">‹</button>
+    <span class="n" id="sNum"></span>
+    <button class="lb-btn" type="button" id="sNext" aria-label="下一頁">›</button>
+    <button class="lb-btn" type="button" id="sFull" aria-label="全螢幕" title="全螢幕">⛶</button>
+    <button class="lb-btn" type="button" id="sClose" aria-label="離開簡報模式">✕</button>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script>
+(() => {
+  const A = window.ALBUM;
+  const $ = (s, r = document) => r.querySelector(s);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const CAT = Object.fromEntries(A.cats.map(c => [c.key, c]));
+  const WD = "日一二三四五六";
+  const P = f => `assets/photos/${f}.webp`, PS = f => `assets/photos/${f}-s.webp`;
+  const d8 = s => { const [y, m, d] = s.split("-").map(Number); return { y, m, d, w: WD[new Date(y, m - 1, d).getDay()] }; };
+  const md = s => { const t = d8(s); return `${t.m}/${t.d}`; };
+  // 日期全文：2025 年 11 月 9 日（日）；多日或多次時改列區間或各日
+  function when(e) {
+    const a = d8(e.date);
+    if (e.dates) return `${a.y} 年　` + e.dates.map(s => { const t = d8(s); return `${t.m}/${t.d}（${t.w}）`; }).join("、");
+    if (e.end) { const b = d8(e.end); return `${a.y} 年 ${a.m} 月 ${a.d} 日（${a.w}）至 ${b.m} 月 ${b.d} 日（${b.w}）`; }
+    return `${a.y} 年 ${a.m} 月 ${a.d} 日（${a.w}）`;
+  }
+  const roc = s => `民國 ${d8(s).y - 1911} 年`;
+  const allPhotos = e => e.photos || (e.parts || []).flatMap(p => p.photos) || [];
+
+  // ---------- 主視覺數字 ----------
+  const evs = A.events.filter(e => e.id !== "community");
+  const comm = A.events.find(e => e.id === "community");
+  const sg = A.events.find(e => e.id === "sg");
+  const stats = [[28, "位師培大學教授"], [evs.length, "項主要活動"], [comm.groups.length - 1, "個實踐社群"], [sg.days.length, "天新加坡參訪"]];
+  $("#stats").innerHTML = stats.map(([b, s]) => `<div class="stat"><b>${b}</b><span>${s}</span></div>`).join("");
+
+
+  // ---------- 分類卡與篩選 ----------
+  const catInfo = c => {
+    const list = A.events.filter(e => e.cat === c.key);
+    const n = list.reduce((k, e) => k + e.total, 0);
+    const names = c.key === "community" ? comm.groups.map(g => g.name).join("、") : list.map(e => e.title).join("、");
+    return { list, n, names };
+  };
+  $("#cats").innerHTML = A.cats.map(c => {
+    const i = catInfo(c);
+    return `<button class="catcard" type="button" style="--c:${c.color}" data-cat="${c.key}">
+      <div class="ic" aria-hidden="true">${c.icon}</div><h3>${esc(c.name)}</h3>
+      <p>${esc(i.names)}</p></button>`;
+  }).join("");
+  $("#filters").innerHTML = `<button class="chip" type="button" data-f="all" aria-pressed="true">全部</button>` +
+    A.cats.map(c => `<button class="chip" type="button" data-f="${c.key}" style="--c:${c.color}" aria-pressed="false">${c.icon} ${esc(c.name)}</button>`).join("");
+
+  // ---------- 時間軸 ----------
+  // 版型依張數：4 張＝左大右三小；3、6 張＝三欄；5 張＝四欄
+  const mosaic = (list, key) => `<div class="mosaic ${list.length === 4 ? "n4" : list.length % 3 === 0 ? "cols3" : ""}">` + list.map((p, i) =>
+    `<button type="button" data-lb="${key}" data-i="${i}" aria-label="放大第 ${i + 1} 張照片"><img src="${PS(p.f)}" alt="" loading="lazy" width="${p.w}" height="${p.h}">${p.c ? `<span class="cap">${esc(p.c)}</span>` : ""}</button>`).join("") + `</div>`;
+  const GAL = {};  // 燈箱用：key → {title, items:[{src,cap}]}
+  const reg = (key, title, list, sub) => { GAL[key] = { title, items: list.map(p => ({ src: P(p.f), cap: [sub, p.c].filter(Boolean).join("｜") })) }; };
+  // 新加坡參訪不提供「瀏覽全部照片」（使用者 10-16 要求，涉及參訪機構師長肖像權）
+  const meta = e => e.id === "sg" ? "" : `<div class="ev-meta">
+    <button class="btn" type="button" data-all="${e.id}">瀏覽全部照片</button></div>`;
+  const dateBox = e => { const t = d8(e.date); return `<div class="datebox"><b>${t.m}/${String(t.d).padStart(2, "0")}</b><span>${t.y}・週${t.w}</span></div>`; };
+
+  function eventHTML(e) {
+    const c = CAT[e.cat];
+    let body = "", nPick = 0;
+    if (e.parts) {
+      body = e.parts.map((p, k) => { reg(`${e.id}-${k}`, e.title, p.photos, p.label); nPick += p.photos.length;
+        return `<div class="part-label">${esc(p.label)}</div>` + mosaic(p.photos, `${e.id}-${k}`); }).join("");
+    } else if (e.days) {
+      e.days.forEach(d => { reg(`sg-${d.day}`, `${e.title}　Day ${d.day}`, d.photos, `${md(d.date)}　${d.units.join("、")}`); nPick += d.photos.length; });
+      body = `<div class="daytabs" role="tablist" aria-label="參訪日">` + e.days.map((d, k) => { const t = d8(d.date);
+        return `<button class="daytab" type="button" role="tab" aria-selected="${k === 0}" data-day="${k}"><b>Day ${d.day}　${t.m}/${t.d}（${t.w}）</b><span>${esc(d.units[0].replace(/（.*/, ""))}${d.units[1] ? "等 " + d.units.length + " 處" : ""}</span></button>`; }).join("") + `</div>` +
+        e.days.map((d, k) => `<div class="daypanel" role="tabpanel" data-panel="${k}" ${k ? "hidden" : ""}>
+          <ul class="units">${d.units.map(u => `<li>${esc(u)}</li>`).join("")}</ul>${mosaic(d.photos, `sg-${d.day}`)}
+</div>`).join("");
+    } else {
+      reg(e.id, e.title, e.photos, when(e)); nPick = e.photos.length;
+      body = mosaic(e.photos, e.id);
+    }
+    return `<article class="event" id="ev-${e.id}" style="--c:${c.color}" data-cat="${e.cat}">
+      <div class="ev-head">${dateBox(e)}<div>
+        <span class="tag">${c.icon} ${esc(c.name)}</span>
+        <h3>${esc(e.title)}${e.sub ? `<small>${esc(e.sub)}</small>` : ""}${e.en ? `<small class="sg-en">${esc(e.en)}</small>` : ""}</h3>
+        <p class="when">🗓 ${when(e)}・${roc(e.date)}</p>
+        <p class="desc">${esc(e.desc)}</p>
+      </div></div>${body}${meta(e)}</article>`;
+  }
+  const sorted = [...evs].sort((a, b) => a.date.localeCompare(b.date));
+  let html = "", lastM = "";
+  for (const e of sorted) {
+    const t = d8(e.date), key = `${t.y}-${t.m}`;
+    if (key !== lastM) { html += `<div class="month" data-month><span>${t.m} 月<small>${t.y}</small></span></div>`; lastM = key; }
+    html += eventHTML(e);
+  }
+  $("#tl").innerHTML = html;
+
+  // ---------- 社群 ----------
+  $("#commDesc").textContent = comm.desc;
+  $("#groups").innerHTML = comm.groups.map((g, k) => {
+    reg(`g${k}`, g.name, g.photos, "");
+    return `<article class="group${k === comm.groups.length - 1 ? " wide" : ""}" style="--c:${CAT.community.color}">
+      <h3>${esc(g.name)}</h3>
+      <ul>${g.items.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+      ${mosaic(g.photos, `g${k}`)}
+      <div class="ev-meta"><button class="btn" type="button" data-all="g${k}">瀏覽全部照片</button></div></article>`;
+  }).join("");
+
+  // ---------- 拼貼補滿：首張佔 2×2，最後一列若有空格就讓最後一張拉寬 ----------
+  function fillMosaics() {
+    document.querySelectorAll(".mosaic:not(.n4)").forEach(m => {
+      if (!m.offsetParent) return;
+      const kids = [...m.children]; kids.forEach(k => k.style.gridColumn = "");
+      const cols = getComputedStyle(m).gridTemplateColumns.split(" ").length;
+      const empty = (cols - (kids.length + 3) % cols) % cols;
+      if (empty && kids.length > 1) kids[kids.length - 1].style.gridColumn = `span ${1 + empty}`;
+    });
+  }
+  fillMosaics();
+  let rsT = null;
+  addEventListener("resize", () => { clearTimeout(rsT); rsT = setTimeout(fillMosaics, 120); });
+
+  // ---------- 篩選 ----------
+  function setFilter(f) {
+    document.querySelectorAll("#filters .chip").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.f === f)));
+    document.querySelectorAll("#tl .event").forEach(el => el.hidden = !(f === "all" || el.dataset.cat === f));
+    // 月份標頭：底下沒有可見活動就隱藏
+    document.querySelectorAll("#tl [data-month]").forEach(m => {
+      let n = m.nextElementSibling, any = false;
+      while (n && !n.hasAttribute("data-month")) { if (!n.hidden) any = true; n = n.nextElementSibling; }
+      m.hidden = !any;
+    });
+    $("#community").hidden = !(f === "all" || f === "community");
+    $("#timeline-sec").hidden = f === "community";
+    fillMosaics();
+  }
+  $("#filters").addEventListener("click", ev => { const b = ev.target.closest("[data-f]"); if (b) setFilter(b.dataset.f); });
+  $("#cats").addEventListener("click", ev => {
+    const b = ev.target.closest("[data-cat]"); if (!b) return;
+    setFilter(b.dataset.cat);
+    (b.dataset.cat === "community" ? $("#community") : $("#timeline")).scrollIntoView({ behavior: "smooth" });
+  });
+
+  // 新加坡日別分頁
+  document.addEventListener("click", ev => {
+    const t = ev.target.closest(".daytab"); if (!t) return;
+    const box = t.closest(".event");
+    box.querySelectorAll(".daytab").forEach(b => b.setAttribute("aria-selected", String(b === t)));
+    box.querySelectorAll(".daypanel").forEach(p => p.hidden = p.dataset.panel !== t.dataset.day);
+    fillMosaics();
+  });
+
+  // ---------- 燈箱 ----------
+  const lb = $("#lb"), lbImg = $("#lbImg"), lbMsg = $("#lbMsg");
+  let cur = null, ci = 0, lastFocus = null;
+  function lbShow() {
+    const it = cur.items[ci];
+    lbMsg.hidden = true; lbImg.hidden = false;
+    lbImg.src = it.src; lbImg.alt = `${cur.title}　第 ${ci + 1} 張`;
+    lbImg.onerror = () => { lbImg.hidden = true; lbMsg.hidden = false; lbMsg.textContent = "這張照片需要連線讀取雲端相簿，目前無法載入。請確認網路連線後再試一次。"; };
+    $("#lbTitle").textContent = cur.title;
+    $("#lbNum").textContent = `${ci + 1} / ${cur.items.length}`;
+    $("#lbCap").innerHTML = it.cap ? `<b>${esc(it.cap)}</b>` : "";
+    // 預載下一張
+    const nx = cur.items[(ci + 1) % cur.items.length]; if (nx) { const im = new Image(); im.src = nx.src; }
+  }
+  function lbOpen(g, i) { cur = g; ci = i; lastFocus = document.activeElement; lb.classList.add("open"); document.body.style.overflow = "hidden"; lbShow(); $("#lbClose").focus(); }
+  function lbClose() { lb.classList.remove("open"); lbImg.removeAttribute("src"); if (!$("#allp").classList.contains("open")) document.body.style.overflow = ""; lastFocus && lastFocus.focus(); }
+  const lbStep = d => { ci = (ci + d + cur.items.length) % cur.items.length; lbShow(); };
+  document.addEventListener("click", ev => { const b = ev.target.closest("[data-lb]"); if (b) lbOpen(GAL[b.dataset.lb], +b.dataset.i); });
+  $("#lbClose").onclick = lbClose; $("#lbPrev").onclick = () => lbStep(-1); $("#lbNext").onclick = () => lbStep(1);
+  lb.addEventListener("click", ev => { if (ev.target === lb || ev.target.classList.contains("lb-stage")) lbClose(); });
+  let tx = null;
+  lb.addEventListener("touchstart", e => { tx = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener("touchend", e => { if (tx == null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) lbStep(dx < 0 ? 1 : -1); tx = null; });
+
+  // ---------- 全部照片（雲端縮圖） ----------
+  const allp = $("#allp");
+  const TH = (id, w) => `https://drive.google.com/thumbnail?id=${id}&sz=w${w}`;
+  function allOpen(key) {
+    let o, title, sub;
+    if (/^g\d+$/.test(key)) { o = comm.groups[+key.slice(1)]; title = o.name; sub = o.items.join("、"); }
+    else { o = A.events.find(e => e.id === key); title = o.title; sub = when(o); }
+    $("#allpTitle").textContent = `${title}｜全部照片`;
+    GAL["all"] = { title, items: o.all.map((id, i) => ({ src: TH(id, 1600), cap: sub })) };
+    $("#allpGrid").innerHTML = o.all.map((id, i) => `<button type="button" data-lb="all" data-i="${i}" aria-label="放大第 ${i + 1} 張"><img src="${TH(id, 400)}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`).join("");
+    allp.classList.add("open"); allp.scrollTop = 0; document.body.style.overflow = "hidden"; $("#allpClose").focus();
+  }
+  document.addEventListener("click", ev => { const b = ev.target.closest("[data-all]"); if (b) allOpen(b.dataset.all); });
+  $("#allpClose").onclick = () => { allp.classList.remove("open"); $("#allpGrid").innerHTML = ""; document.body.style.overflow = ""; };
+
+  // ---------- 深淺色 ----------
+  const root = document.documentElement;
+  try { const t = localStorage.getItem("album-theme"); if (t) root.dataset.theme = t; } catch (e) {}
+  $("#themeBtn").onclick = () => {
+    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+    try { localStorage.setItem("album-theme", root.dataset.theme); } catch (e) {}
+  };
+
+  // ---------- 簡報模式 ----------
+  const show = $("#show"), stage = $("#stage");
+  const logoFoot = n => `<div class="s-foot"><span><img src="assets/logo-tfai.png" alt="">數位科技轉化大學師培課程培訓計畫・活動成果相簿</span><span>${n}</span></div>`;
+  const img = (p, big) => p ? `<img src="${big ? P(p.f) : PS(p.f)}" alt="">` : "";
+  // 依框比例決定填滿或完整顯示＋模糊補邊，避免切到人
+  function fitImg(p, boxR, big) {
+    if (!p) return "";
+    const src = big ? P(p.f) : PS(p.f), r = p.w / p.h;
+    if (Math.abs(r - boxR) / boxR < 0.08) return `<img class="cv" src="${src}" alt="">`;
+    return `<img class="bf" src="${src}" alt="" aria-hidden="true"><img class="ct" src="${src}" alt="">`;
+  }
+  function evSlide(e, c, title, metaTxt, desc, list, extra = "") {
+    return `<section class="slide s-ev" style="--c:${c.color}">
+      <div class="s-head"><div class="s-title"><span class="pill">${c.icon} ${esc(c.name)}</span></div>
+        <h2>${esc(title)}</h2><div class="s-meta">${metaTxt}</div></div>
+      <div class="s-body">
+        <div class="ph m">${fitImg(list[0], 4 / 3, true)}</div>
+        <div class="ph">${fitImg(list[1], 4 / 3)}</div>
+        <div class="ph">${fitImg(list[2], 4 / 3)}</div>
+        <div class="txt">${extra}${desc ? `<p class="s-desc">${esc(desc)}</p>` : ""}</div>
+      </div>${logoFoot("")}</section>`;
+  }
+  // 概覽頁的里程碑（依時間軸資料整理）
+  const MILES = [["2025.11～12", "基礎工作坊三場", "ws"], ["2026.4", "回流工作坊", "ws"], ["2026.6", "師大合作工作坊、成果分享會", "partner"],
+    ["2026.6～7", "暑期沙盒課程", "course"], ["2026.7", "回流工作坊暨社群共備", "ws"], ["2026.10", "新加坡學術參訪", "intl"]];
+  function buildSlides() {
+    const s = [];
+    s.push(`<section class="slide s-cover"><div>
+      <div class="logo"><img src="assets/logo-tfai.png" alt="">數位科技轉化大學師培課程培訓計畫</div>
+      <h1>計畫活動<br>成果相簿</h1><p>2025 年 11 月 ～ 2026 年 10 月　陳佩英教授計畫團隊</p>
+      <div class="s-stats">${stats.map(([b, t]) => `<div><b>${b}</b><span>${t}</span></div>`).join("")}</div></div>
+      <div><img src="assets/mascot-community.webp" alt=""></div></section>`);
+    s.push(`<section class="slide"><div class="s-title" style="--c:#2F6DB5">OVERVIEW</div><h2>五大類活動，一年持續推進</h2>
+      <div class="s-over">${A.cats.map(c => { const i = catInfo(c); return `<div style="--c:${c.color}"><i>${c.icon}</i><b>${esc(c.name)}</b><span>${esc(i.names)}</span></div>`; }).join("")}</div>
+      <div class="s-tl">${MILES.map(([w, t, k]) => `<div style="--c:${CAT[k].color}"><b>${w}</b><span>${t}</span></div>`).join("")}</div>
+      ${logoFoot("")}</section>`);
+    for (const e of sorted) {
+      const c = CAT[e.cat];
+      if (e.parts) {
+        s.push(`<section class="slide" style="--c:${c.color}"><div class="s-title"><span class="pill">${c.icon} ${esc(c.name)}</span></div>
+          <h2>${esc(e.title)}</h2><div class="s-when">🗓 ${when(e)}</div><p class="s-desc">${esc(e.desc)}</p>
+          <div class="s-grid" style="height:440px">${e.parts.map(p => `<div>${img(p.photos[0], true)}<div class="lab">${esc(p.label)}</div></div>`).join("")}</div>${logoFoot("")}</section>`);
+      } else if (e.days) {
+        s.push(`<section class="slide" style="--c:${c.color}"><div class="s-title"><span class="pill">${c.icon} ${esc(c.name)}</span></div>
+          <h2>${esc(e.title)}</h2><div class="s-when">🗓 ${when(e)}　<i>${esc(e.en)}</i></div><p class="s-desc">${esc(e.desc)}</p>
+          <div class="s-days">${e.days.map(d => `<div><div class="ph">${fitImg(d.photos[0], 4 / 3)}</div><b>Day ${d.day}　${md(d.date)}</b><span>${d.units.map(u => esc(u.replace(/（.*?）/g, ""))).join("<br>")}</span></div>`).join("")}</div>${logoFoot("")}</section>`);
+        for (const d of e.days) {
+          const t = d8(d.date);
+          s.push(evSlide(e, c, `新加坡參訪 Day ${d.day}`, `🗓 ${t.y} 年 ${t.m} 月 ${t.d} 日（${t.w}）`, d.note, d.photos,
+            `<ul class="units">${d.units.map(u => `<li>${esc(u)}</li>`).join("")}</ul>`));
+        }
+      } else {
+        s.push(evSlide(e, c, e.title, `${e.sub ? `<b>${esc(e.sub)}</b>　` : ""}🗓 ${when(e)}`, e.desc, e.photos));
+      }
+    }
+    s.push(`<section class="slide" style="--c:${CAT.community.color}"><div class="s-title"><span class="pill">${CAT.community.icon} ${esc(CAT.community.name)}</span></div>
+      <h2>${esc(comm.title)}</h2><p class="s-desc">${esc(comm.desc)}</p>
+      <div class="s-groups">${comm.groups.map(g => `<div><div class="ph gimg">${fitImg(g.photos[0], 4 / 3)}</div><b>${esc(g.name)}</b><ul>${g.items.slice(0, 3).map(x => `<li>${esc(x.replace(/：.*$/, ""))}</li>`).join("")}${g.items.length > 3 ? `<li>等 ${g.items.length} 項</li>` : ""}</ul></div>`).join("")}</div>
+      ${logoFoot("")}</section>`);
+    s.push(`<section class="slide s-end"><div><img src="assets/mascot-tablet.webp" alt=""></div><div>
+      <div class="s-title" style="--c:#2F6DB5">THANK YOU</div><h2>謝謝聆聽</h2>
+      <p class="s-desc">© 2026 陳佩英教授計畫團隊<br>數位科技轉化大學師培課程培訓計畫</p></div></section>`);
+    stage.innerHTML = s.join("");
+  }
+  let si = 0, slides = [], idleT = null;
+  const fit = () => { const k = Math.min(innerWidth / 1600, innerHeight / 900); stage.style.transform = `translate(-50%,-50%) scale(${k})`; };
+  function go(i) {
+    si = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach((el, k) => el.classList.toggle("on", k === si));
+    $("#sNum").textContent = `${si + 1} / ${slides.length}`;
+    $("#showProg").style.width = `${(si + 1) / slides.length * 100}%`;
+    // 預載下一頁的大圖
+    const nx = slides[si + 1]; if (nx) nx.querySelectorAll("img").forEach(im => { const p = new Image(); p.src = im.src; });
+  }
+  function wake() { show.classList.remove("idle"); clearTimeout(idleT); idleT = setTimeout(() => show.classList.add("idle"), 2500); }
+  function showOpen(at = 0, full = true) {
+    if (!stage.children.length) { buildSlides(); slides = [...stage.children]; }
+    show.classList.add("open"); document.body.style.overflow = "hidden"; fit(); go(typeof at === "number" ? at : 0); wake();
+    if (full && document.documentElement.requestFullscreen) document.documentElement.requestFullscreen().catch(() => {});
+  }
+  // 網址加 #slide=5 可直接從第 5 頁開始（不自動全螢幕）
+  const hm = location.hash.match(/^#slide=(\d+)/);
+  if (hm) setTimeout(() => showOpen(+hm[1] - 1, false), 0);
+  function showClose() {
+    show.classList.remove("open"); document.body.style.overflow = "";
+    if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+  }
+  document.querySelectorAll("[data-show]").forEach(b => b.addEventListener("click", () => showOpen(0)));
+  $("#sPrev").onclick = () => go(si - 1); $("#sNext").onclick = () => go(si + 1); $("#sClose").onclick = showClose;
+  $("#sFull").onclick = () => document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen().catch(() => {});
+  stage.addEventListener("click", ev => { const r = stage.getBoundingClientRect(); go(si + (ev.clientX > r.left + r.width / 3 ? 1 : -1)); });
+  show.addEventListener("mousemove", wake);
+  let sx = null;
+  show.addEventListener("touchstart", e => { sx = e.touches[0].clientX; wake(); }, { passive: true });
+  show.addEventListener("touchend", e => { if (sx == null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 50) go(si + (dx < 0 ? 1 : -1)); sx = null; });
+  addEventListener("resize", () => show.classList.contains("open") && fit());
+  document.addEventListener("fullscreenchange", () => setTimeout(fit, 60));
+
+  // ---------- 鍵盤 ----------
+  document.addEventListener("keydown", ev => {
+    if (show.classList.contains("open")) {
+      if (["ArrowRight", "PageDown", " ", "Enter"].includes(ev.key)) { ev.preventDefault(); go(si + 1); }
+      else if (["ArrowLeft", "PageUp", "Backspace"].includes(ev.key)) { ev.preventDefault(); go(si - 1); }
+      else if (ev.key === "Home") go(0); else if (ev.key === "End") go(slides.length - 1);
+      else if (ev.key === "Escape") showClose();
+      else if (ev.key.toLowerCase() === "f") $("#sFull").click();
+      wake(); return;
+    }
+    if (lb.classList.contains("open")) {
+      if (ev.key === "ArrowRight") lbStep(1); else if (ev.key === "ArrowLeft") lbStep(-1); else if (ev.key === "Escape") lbClose();
+      return;
+    }
+    if (allp.classList.contains("open") && ev.key === "Escape") $("#allpClose").click();
+  });
+})();
+</script>
+</body>
+</html>
