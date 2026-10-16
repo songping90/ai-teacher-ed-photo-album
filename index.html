@@ -690,8 +690,8 @@ footer p { margin: 4px 0; }
     else if (e.id === "sandbox") addR(e, e.photos, [2, 1, 0], e.title, p => { const t = d8(`2026-${p.c.replace("/", "-")}`); return `2026 年 ${t.m} 月 ${t.d} 日（${t.w}）`; });
     else addR(e, e.photos, e.photos.length > 3 ? [0, 1] : [0], e.title, when(e) + (e.sub ? `・${e.sub}` : ""));
   }
-  // 社群：選有實體活動的照片
-  [[1, 1], [2, 0], [3, 0]].forEach(([g, i]) => { const G = comm.groups[g]; const p = G.photos[i]; if (p) R.push({ f: p.f, cat: "community", title: G.name, sub: p.c ? p.c.replace("　", " ") : "", ev: "community" }); });
+  // 社群：第一組為線上共備，其餘選實體活動的照片
+  [[0, 0], [1, 1], [2, 0], [3, 0]].forEach(([g, i]) => { const G = comm.groups[g]; const p = G.photos[i]; if (p) R.push({ f: p.f, cat: "community", title: G.name, sub: p.c ? p.c.replace("　", " ") : "", ev: "community" }); });
   // 跳到活動的晶片（每個活動一顆）
   const chipEv = []; R.forEach((r, i) => { if (!chipEv.find(c => c.ev === r.ev)) chipEv.push({ ev: r.ev, i }); });
   $("#reelChips").innerHTML = chipEv.map(c => { const e = A.events.find(x => x.id === c.ev); const t = e.id === "community" ? "" : md(e.date);
