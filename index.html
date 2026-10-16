@@ -141,7 +141,7 @@ button { font: inherit; color: inherit; }
 .rs.on { opacity: 1; z-index: 1; }
 .rs .bg { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); object-fit: cover; filter: blur(28px) brightness(.45) saturate(1.1); }
 .rs .fg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
-.rs.on .fg { animation: kb 8s ease-out both; }
+.rs.on .fg { animation: kb 7s ease-out both; }
 @keyframes kb { from { transform: scale(1); } to { transform: scale(1.045); } }
 .reel-shade { position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(180deg, rgba(0,0,0,.45) 0%, transparent 18%, transparent 55%, rgba(0,0,0,.78) 100%); }
 .reel-brand { position: absolute; z-index: 3; left: 32px; top: 22px; display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; letter-spacing: .04em; color: rgba(255,255,255,.9); }
@@ -700,7 +700,7 @@ footer p { margin: 4px 0; }
   stageEl.insertAdjacentHTML("afterbegin", R.map((r, i) => `<div class="rs" data-i="${i}"><img class="bg" alt="" aria-hidden="true" data-src="${P(r.f)}"><img class="fg" alt="${esc(r.title)}" data-src="${P(r.f)}"></div>`).join(""));
   const rsEls = [...stageEl.querySelectorAll(".rs")];
   const loadR = i => { const el = rsEls[(i + R.length) % R.length]; el.querySelectorAll("img[data-src]").forEach(im => { im.src = im.dataset.src; im.removeAttribute("data-src"); }); };
-  const DUR = 6000, reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const DUR = 5000, reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   let ri = 0, playing = !reduce, rT = null, inView = true;
   const prog = $("#reelProg");
   function rShow(i) {
